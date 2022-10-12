@@ -23,7 +23,7 @@ namespace WebAPIs.Controllers
             _IServiceMessage = IServiceMessage;
         }
 
-        [Authorize]
+        //[Authorize]
         [Produces("application/json")]
         [HttpPost("/api/Add")]
         public async Task<List<Notifies>> Add(MessageViewModel message)
@@ -66,7 +66,8 @@ namespace WebAPIs.Controllers
             return messageMap;
         }
 
-        [Authorize]
+        //[Authorize]   
+        [AllowAnonymous]
         [Produces("application/json")]
         [HttpPost("/api/List")]
         public async Task<List<MessageViewModel>> List()
@@ -91,6 +92,9 @@ namespace WebAPIs.Controllers
 
         private async Task<string> RetornarIdUsuarioLogado()
         {
+
+            return "4b845330-4d85-4ad2-9d34-ac313fbcde68";
+
             if (User != null)
             {
                 var idUsuario = User.FindFirst("idUsuario");

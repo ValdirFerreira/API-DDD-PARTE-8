@@ -99,7 +99,8 @@ if (app.Environment.IsDevelopment())
 
 //app.UseCors(b => b.WithOrigins(urlDev, urlHML, urlPROD));
 
-var devClient = "http://localhost:4200";
+//var devClient = "http://localhost:4200";
+var devClient = "http://localhost:3000";
 app.UseCors(x => x
 .AllowAnyOrigin()
 .AllowAnyMethod()
